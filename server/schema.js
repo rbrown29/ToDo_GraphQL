@@ -39,15 +39,24 @@ const mutation = new GraphQLObjectType({
                 title: { type: new GraphQLNonNull(GraphQLString) },
                 completed: { type: new GraphQLNonNull(GraphQLBoolean) }
             },
-            resolve: (parent, args) => {
+            resolve (parent, args)  {
                 const todo = new Todo({
                     title: args.title,
                     completed: false
                 });
 
                 return todo.save();
+            }
+        },
+        deleteTodo: {
+            type: TodoType,
+            args: {
+                id: { type: new GraphQLNonNull(GraphQLID) }
             },
-        }
+            resolve (parent, args) {
+                return Todo.findByIdAndDelete(args.id);
+            }
+        },
     }
 });
         
