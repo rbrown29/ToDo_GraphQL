@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+body {
+  font-family: 'Syne Mono' , monospace; 
+  margin: 0; 
+  padding: 0; 
+  background-color: #ccc;
+}
+.App {
+  padding: 20px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 20px; 
+}
+
+
+.table-dark {
+  background-color: #222; 
+  color: #ddd; 
+  width: 100%; 
+}
+
+.table-dark th,
+.table-dark td {
+  border-color: #444; 
+  padding: 12px 10px; 
+}
+
+.table-dark tread th {
+  display: flex; /* Use Flexbox for better alignment */
+  align-items: center; /* Center-align header content */
+  justify-content: center; /* Center-align header content */
+  border-color: #444; /* Darker borders for header cells */
+  padding: 12px 10px; /* Even padding in header cells */
+
+}
+
+.table-dark thead th {
+  background-color: #333; 
+  color: #fff; 
+}
+
+.table-dark tbody tr:hover {
+  background-color: #333; 
+}
+
+.icon {
+  color: #ccc; 
+  cursor: pointer; 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.icon:hover {
+  color: #fff; 
+}
+
