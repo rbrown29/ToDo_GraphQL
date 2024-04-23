@@ -27,11 +27,11 @@ body {
 }
 
 .table-dark tread th {
-  display: flex; /* Use Flexbox for better alignment */
-  align-items: center; /* Center-align header content */
-  justify-content: center; /* Center-align header content */
-  border-color: #444; /* Darker borders for header cells */
-  padding: 12px 10px; /* Even padding in header cells */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-color: #444; 
+  padding: 12px 10px; 
 
 }
 
