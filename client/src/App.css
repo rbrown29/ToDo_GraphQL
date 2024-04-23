@@ -95,6 +95,7 @@ body {
   box-sizing: border-box;
   width: 100%; 
   text-align: center;
+  font-family: 'Syne Mono' , monospace;
 }
 
 .form-dark .form-control::placeholder {
@@ -115,6 +116,7 @@ body {
   cursor: pointer;
   box-sizing: border-box;
   width: 100%;
+  font-family: 'Syne Mono' , monospace;
 }
 
 .form-dark .btn-primary:hover {

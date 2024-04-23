@@ -83,14 +83,19 @@ const mutation = new GraphQLObjectType({
       type: TodoType,
       args: {
         id: { type: GraphQLNonNull(GraphQLID) },
+        completed: { type: GraphQLNonNull(GraphQLBoolean) },
       },
       async resolve(parent, args) {
-        const todo = await Todo.findById(args.id);
-        return Todo.findByIdAndUpdate(args.id, {
-          $set: {
-            completed: !todo.completed,
-          },
-        });
+        try {
+          const todo = await Todo.findById(args.id);
+          if (!todo) {
+            throw new Error('Todo not found');
+          }
+          return Todo.findByIdAndUpdate(args.id, { $set: { completed: !todo.completed } }, { new: true });
+        } catch (error) {
+          console.error("Error toggling todo:", error);
+          throw new Error(error.message || 'Error processing request');
+        }
       },
     },
   },
